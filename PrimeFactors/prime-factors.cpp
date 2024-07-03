@@ -14,14 +14,11 @@ public:
 				}
 			}
 			else if (number == 6) {
-				while (number % divisor == 0) {
-					result.push_back(divisor);
-					number /= divisor;
-				}
-				divisor++;
-				while (number % divisor == 0) {
-					result.push_back(divisor);
-					number /= divisor;
+				for (divisor = 2; number > 1; divisor++) {
+					while (number % divisor == 0) {
+						result.push_back(divisor);
+						number /= divisor;
+					}
 				}
 			}
 			else {
